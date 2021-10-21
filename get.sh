@@ -65,14 +65,20 @@ do_fetch(){
     cd utool
     return 0 
 }
+
 logo(){
-    echo "logo laal"
+    echo "       _              _
+ _   _| |_ ___   ___ | |
+| | | | __/ _ \ / _ \| |
+| |_| | |_ (_) | (_) | |
+ \__,_|\__\___/ \___/|_|
+                        "
 }
 
 do_install(){
     echo '***install need sudo,please enter password***'
     sudo make install
-    echo 'wtool was installed to /usr/local/bin,have fun.'
+    echo 'utool was installed to /usr/local/bin,have fun.'
 }
 
 main(){
@@ -80,7 +86,7 @@ main(){
     getType
     type=$?
     set -e
-    case "$type" in 
+    case "$type" in
 	("1")
 	    echo "Launching utool installer..."
 	    do_download `pwd`
